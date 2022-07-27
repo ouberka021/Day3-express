@@ -2,7 +2,6 @@ require('dotenv').config()
 const express = require("express");
 const app = express();
 const port = process.env.PORT;
-//const fruits = require('./models/fruits.js'); 
 
 app.get("/greeting", (req, res) => {
     res.send("Hello, stranger");
