@@ -33,13 +33,6 @@ for(let i = 0; i < magicArray.length; i++) {
 }
    })
 
-
-
-
-
-
-
-
 // server running
 app.listen(port, () => {
     console.log("The server is running on port " + port);
