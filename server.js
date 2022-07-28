@@ -2,6 +2,7 @@ require('dotenv').config()
 const express = require("express");
 const app = express();
 const port = process.env.PORT;
+//const fruits = require('./models/fruits.js'); 
 
 app.get("/greeting", (req, res) => {
     res.send("Hello, stranger");
@@ -23,10 +24,12 @@ const magicArray = ["It is certain", "It is decidedly so",
   "Better not tell you now", "Cannot predict now", "Concentrate and ask again",
   "Don't count on it", "My reply is no", "My sources say no","Outlook not so good",
    "Very doubtful"];
-   app.get('/magic/:arrayPlay', (req, res) => {
+   app.get('/magic/:Will%20I%20Be%20A%20Millionaire', (req, res) => {
     let htmlResponse = "";
-for(let i = 0; itr < magicArray.length; i++) {
-    res.send("<h1>" + req.params.arrayPlay[i] + "</h1>");
+    hello = 'Will%20I%20Be%20A%20Millionaire';
+for(let i = 0; i < magicArray.length; i++) {
+   // res.send("<h1>" + req.params.magicArray[i] + "</h1>");
+    res.send(magicArray[i][req.params.hello]);
 }
    })
 
