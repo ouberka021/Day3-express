@@ -17,21 +17,28 @@ app.get("/tip/:total/:tipPercentage/", (req, res) => {
 
 });
 //Magic bill
-const magicArray = ["It is certain", "It is decidedly so",
+
+   app.get('/magic/:ask', (req, res) => {
+    var magicArray = ["It is certain", "It is decidedly so",
  "Without a doubt", "Yes definitely","You may rely on it",
   "As I see it yes", "Most likely", "Outlook good","Yes", 
   "Signs point to yes", "Reply hazy try again", "Ask again later",
   "Better not tell you now", "Cannot predict now", "Concentrate and ask again",
   "Don't count on it", "My reply is no", "My sources say no","Outlook not so good",
    "Very doubtful"];
-   app.get('/magic/:Will%20I%20Be%20A%20Millionaire', (req, res) => {
-    let htmlResponse = "";
-    hello = 'Will%20I%20Be%20A%20Millionaire';
-for(let i = 0; i < magicArray.length; i++) {
+    console.log(req.params.ask)
+    var magicArray = magicArray[Math.floor(Math.random() * magicArray.length)]
+    res.send("h1" + magicArray + "h1")
    // res.send("<h1>" + req.params.magicArray[i] + "</h1>");
-    res.send(magicArray[i][req.params.hello]);
-}
+
    })
+
+
+
+
+
+
+
 
 // server running
 app.listen(port, () => {
